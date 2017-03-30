@@ -1,0 +1,37 @@
+{
+  "name": "react-structure",
+  "description": "Create a structure for react will all tools we need.",
+  "keywords": [
+    "react",
+    "redux"
+  ],
+  "version": "0.0.1",
+  "author": {
+    "name": "Vincent BENOIT",
+    "email": "",
+    "url": "http://www.vincentbenoit.com/"
+  },
+  "contributors": [
+    "Vincent Benoit (https://github.com/vinz51)"
+  ],
+  "homepage": "",
+  "scripts": {
+  },
+  "licence": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinz51/react-structure"
+  },
+  "bugs": {
+    "url": "https://github.com/vinz51/react-structure/issues"
+  },
+  "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^2.3.2"
+  },
+  "devDependencies": {}
+}
