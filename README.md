@@ -24,3 +24,6 @@ https://github.com/webpack-contrib/sass-loader
 ### Assets
 https://github.com/webpack-contrib/file-loader
 https://github.com/webpack-contrib/extract-text-webpack-plugin
+
+Issue for the scss : 
+https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/263
