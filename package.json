@@ -11,11 +11,11 @@
     "redux",
     "webpack",
     "webpack 2",
-    "babel"
+    "babel",
+    "express"
   ],
   "scripts": {
-    "start": "node main.js",
-    "test": "webpack-dev-server"
+    "start": "node main.js"
   },
   "author": {
     "name": "Vincent BENOIT",
@@ -25,7 +25,7 @@
   "contributors": [
     "Vincent Benoit (https://github.com/vinz51)"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/vinz51/react-structure"
@@ -34,17 +34,15 @@
     "url": "https://github.com/vinz51/react-structure/issues"
   },
   "dependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-core": "^6.24.0",
+    "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "express": "^4.15.2",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-redux": "^5.0.4",
-    "react-router-dom": "^4.0.0",
-    "redux": "^3.6.0"
+    "react": "^15.5.4",
+    "react-router-dom": "^4.1.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^6.4.1",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
@@ -52,6 +50,9 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "node-sass": "^4.5.2",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
     "redux-logger": "^3.0.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",

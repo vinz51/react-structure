@@ -59,7 +59,7 @@ module.exports = {
         new ExtractTextPlugin("./static/styles.css"),
     ],
     resolve : {
-        extensions  : ['.js','.js6','.json','.css','.scss','.html'], // import without extension like import App from './app'
+        extensions  : ['.js','.js6','.css','.scss','.html'], // import without extension like import App from './app'
         modules     : [path.resolve(DIRNAME, './'), 'node_modules'],
         alias       : {
             Actions     : path.resolve(DIRNAME, './actions/'),
