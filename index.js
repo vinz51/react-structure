@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 import { logger } from 'redux-logger'
 
-import allClasses from './styles/core.css'
+import allClasses from 'Styles/core.css'
 
 import App from 'Containers/App'
 
