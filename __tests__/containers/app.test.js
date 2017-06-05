@@ -1,5 +1,5 @@
 import React from 'react'
-import App from 'Containers/App'
+import App from '../../containers/App'
 
 import {
     renderIntoDocument, // Render a react element with the DOM
