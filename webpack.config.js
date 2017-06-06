@@ -67,7 +67,8 @@ module.exports = {
             Errors      : path.resolve(DIRNAME, './errors/'),
             Reducers    : path.resolve(DIRNAME, './reducers/'),
             Stateless   : path.resolve(DIRNAME, './stateless/'),
-            Styles      : path.resolve(DIRNAME, './styles/')
+            Styles      : path.resolve(DIRNAME, './styles/'),
+            Validators  : path.resolve(DIRNAME, './validators/validators')
         }
     }
 }
