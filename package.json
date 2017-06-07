@@ -1,7 +1,7 @@
 {
   "name": "react-structure",
-  "version": "0.0.1",
-  "description": "Create a structure for a new react project.",
+  "version": "1.0.0",
+  "description": "Structure for a new react project.",
   "main": "index.js",
   "keywords": [
     "react",
@@ -12,7 +12,9 @@
     "webpack",
     "webpack 2",
     "babel",
+    "nodejs",
     "express",
+    "validators",
     "jest"
   ],
   "scripts": {
@@ -21,7 +23,7 @@
   },
   "author": {
     "name": "Vincent BENOIT",
-    "email": "",
+    "email": "benoit.vincent.vince@gmail.com",
     "url": "http://www.vincentbenoit.com/"
   },
   "contributors": [
@@ -48,7 +50,8 @@
       "^Containers$": "<rootDir>/containers/",
       "^Errors$": "<rootDir>/errors/",
       "^Reducers$": "<rootDir>/reducers/",
-      "^Stateless$": "<rootDir>/stateless/"
+      "^Stateless$": "<rootDir>/stateless/",
+      "^Validators$": "<rootDir>/validators/"
     }
   },
   "dependencies": {
