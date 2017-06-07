@@ -7,10 +7,10 @@ class Input extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            type    : 'text',
-            value   : '',
-            errors  : [],
-            validate: []
+            type        : 'text',
+            value       : '',
+            errors      : [],
+            validate    : []
         }
         this.update     = this.update.bind(this)
         this.onChange   = this.onChange.bind(this)
@@ -42,19 +42,26 @@ class Input extends Component {
     }
 
     isValid(showErrors) {
-        const errors = this.props.validate.reduce((memo, currentName) =>
-            memo.concat(validators[currentName](
-                this.context.values[this.props.name]
-            )), []);
 
-        if (showErrors)
+        if ( this.props.hasOwnProperty('validate') )
         {
-            this.setState({
-                errors
-            });
+            const errors = this.props.validate.reduce((memo, currentName) =>
+                memo.concat(validators[currentName](
+                    this.context.values[this.props.name]
+                )), []);
+
+            if (showErrors)
+            {
+                this.setState({
+                    errors
+                });
+            }
+            return !errors.length;
         }
-        return !errors.length;
-        }
+
+        return true
+
+    }
 
     onBlur() {
         this.isValid(true);
@@ -73,6 +80,7 @@ class Input extends Component {
                     max={ this.props.max }
                     onChange={ this.onChange }
                     onBlur={ this.onBlur }
+                    autoFocus={ this.props.autofocus }
                 />
                 {
                     this.state.errors.length ?
@@ -95,7 +103,12 @@ Input.propTypes = {
     pattern     : PropTypes.string,
     min         : PropTypes.number,
     max         : PropTypes.number,
+    autofocus   : PropTypes.bool,
     validate    : PropTypes.arrayOf(PropTypes.string),
+}
+
+Input.defaultProps = {
+    autofocus : false
 }
 
 Input.contextTypes = {

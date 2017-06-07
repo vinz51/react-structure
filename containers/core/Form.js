@@ -9,8 +9,6 @@ import { without } from 'lodash'
 
 import { update, reset } from 'Actions/core/form'
 
-const noop = () => undefined;
-
 class Form extends Component {
 
     constructor( props ) {
@@ -21,7 +19,7 @@ class Form extends Component {
         this.registerValidation = this.registerValidation.bind(this)
         this.removeValidation   = this.removeValidation.bind(this)
         this.isFormValid        = this.isFormValid.bind(this)
-        this.submit             = this.submit.bind(this)
+        this.onSubmit           = this.onSubmit.bind(this)
     }
 
     /**
@@ -35,6 +33,12 @@ class Form extends Component {
         return this.removeValidation.bind(null, isValidFunc);
     }
 
+    /**
+     * @function removeValidation
+     * @summary Remove the validation from the
+     * @param  {[type]} ref [description]
+     * @return {[type]}     [description]
+     */
     removeValidation(ref) {
         this.state.validations = without(this.state.validations, ref);
     }
@@ -46,8 +50,7 @@ class Form extends Component {
      * @return {Boolean}
      */
     isFormValid(showErrors) {
-        return this.state.validations.reduce((memo, isValidFunc) =>
-        isValidFunc(showErrors) && memo, true);
+        return this.state.validations.reduce((memo, isValidFunc) => isValidFunc(showErrors) && memo, true);
     }
 
     /**
@@ -55,13 +58,19 @@ class Form extends Component {
      * @description checks if the form is valid, sends copy of the model to the callback function and resets the model to the initial state
      * @return {[type]} [description]
      */
-    submit(){
-        if (this.isFormValid(true)) {
-            this.props.onSubmit(assign({}, this.props.values));
-            // this.props.reset();
+    submit() {
+
+        if ( this.isFormValid(true) && this.props.hasOwnProperty("onSubmit") )
+        {
+            this.props.onSubmit(Object.assign({}, this.props.values))
         }
+
     }
 
+    /**
+     * @function getChildContext
+     * @return {object}
+     */
     getChildContext() {
 
         return {
@@ -75,19 +84,25 @@ class Form extends Component {
 
     }
 
+    /**
+     * @function onSubmit
+     * @summary Stop the event to avoid to be redirect by the action
+     * @param  {object} event
+     */
+    onSubmit(event) {
+        event.preventDefault()
+        this.submit()
+    }
+
     render() {
 
         return (
-            <form>
+            <form onSubmit={e => this.onSubmit(e)}>
                 { this.props.children }
             </form>
         )
 
     }
-}
-
-Form.defaultProps = {
-    onSubmit : noop
 }
 
 Form.propTypes = {

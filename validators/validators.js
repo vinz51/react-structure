@@ -23,6 +23,16 @@ export const email = (email) => {
 }
 
 /**
+ * @function url
+ * @summary check if the value is a correct url
+ * @param  {string} url
+ * @return {boolean}
+ */
+export const url = (url) => {
+    return !checkField(url) || !validUrl.isWebUri(url) ? [msg.url] : []
+}
+
+/**
  * @funtion checkField
  * @summary verify if the field is filled
  * @param  {string} value

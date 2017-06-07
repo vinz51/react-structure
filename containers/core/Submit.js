@@ -6,7 +6,7 @@ class Submit extends Component {
     render() {
 
         return(
-            <button>
+            <button type="submit">
                 { this.props.label }
             </button>
         )
