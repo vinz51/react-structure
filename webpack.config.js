@@ -65,9 +65,11 @@ module.exports = {
             Actions     : path.resolve(DIRNAME, './actions/'),
             Containers  : path.resolve(DIRNAME, './containers/'),
             Errors      : path.resolve(DIRNAME, './errors/'),
+            FormCore    : path.resolve(DIRNAME, './containers/core/'),
             Reducers    : path.resolve(DIRNAME, './reducers/'),
             Stateless   : path.resolve(DIRNAME, './stateless/'),
-            Styles      : path.resolve(DIRNAME, './styles/')
+            Styles      : path.resolve(DIRNAME, './styles/'),
+            Validators  : path.resolve(DIRNAME, './validators/validators')
         }
     }
 }
